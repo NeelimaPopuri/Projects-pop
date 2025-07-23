@@ -23,3 +23,30 @@ while True:
             print("Must be between 2-4 players.")
     else:
         print("Invalid, Try Again!!")
+
+max_score = 50
+players_scores = [0 for _ in range(players)]
+
+
+while max(players_scores) < max_score:
+    for player_idx in range(players):
+        print("/n player number", player_idx+1, "turn has started. /n")
+        current_score = 0
+        while True:
+            should_roll = input("would you like to Roll(y)?")
+            if should_roll.loweer() != "y":
+                break
+
+            value = roll()
+            if value == 1:
+                print("You rolled a 1!  Turn Done!")
+                current_score = 0
+                break
+            else:
+                current_score += value
+                print("you rolled a:", value)
+
+            print("You Score is ", current_score)
+
+        players_scores[player_idx] += current_score
+        print("Your total score is:", players_scores[player_idx])
