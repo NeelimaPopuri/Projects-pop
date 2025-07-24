@@ -1,0 +1,4 @@
+My <adjective> pet <noun> loves to <verb> on my mom’s <body_part>.
+Yesterday, it wore a <adjective> hat and danced <adverb> with a <noun>.
+We laughed so hard we <verb>ed spaghetti out of our <noun>!
+
