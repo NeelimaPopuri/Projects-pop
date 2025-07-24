@@ -8,16 +8,12 @@ def roll():
     return roll
 
 
-value = roll()
-print(value)
-
-
 while True:
-    players = input("Enter the number of players(1-4):")
+    players = input("Enter the number of players(2-4):")
     if players.isdigit():
         players = int(players)
 
-        if 1 <= players <= 4:
+        if 2 <= players <= 4:
             break
         else:
             print("Must be between 2-4 players.")
@@ -25,16 +21,18 @@ while True:
         print("Invalid, Try Again!!")
 
 max_score = 50
-players_scores = [0 for _ in range(players)]
+player_scores = [0 for _ in range(players)]
 
 
-while max(players_scores) < max_score:
+while max(player_scores) < max_score:
     for player_idx in range(players):
-        print("/n player number", player_idx+1, "turn has started. /n")
+        print("\nplayer number", player_idx+1, "turn has started.\n")
+        print("your total score is:", player_scores[player_idx], "\n")
         current_score = 0
+
         while True:
             should_roll = input("would you like to Roll(y)?")
-            if should_roll.loweer() != "y":
+            if should_roll.lower() != "y":
                 break
 
             value = roll()
@@ -48,5 +46,10 @@ while max(players_scores) < max_score:
 
             print("You Score is ", current_score)
 
-        players_scores[player_idx] += current_score
-        print("Your total score is:", players_scores[player_idx])
+        player_scores[player_idx] += current_score
+        print("Your total score is:", player_scores[player_idx])
+
+max_score = max(player_scores)
+winning_idx = player_scores.index(max_score)
+print("Player number", winning_idx+1,
+      "is the winner with a score of:", max_score)
