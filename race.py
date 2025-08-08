@@ -1,7 +1,11 @@
 import turtle
+import time
+import random
 
 
 WIDTH, HEIGHT = 500, 500
+COLORS = ['red', 'green', 'yellow', 'orange', 'purple',
+          'white', 'blue', 'black', 'pink', 'brown', 'cyan']
 
 
 def get_number_of_racers():
@@ -17,6 +21,15 @@ def get_number_of_racers():
             return racers
         else:
             print("Numbers not in a range 2-10.. Try Again....")
+
+
+def race(colors):
+    turtles = create_turtles(colors)
+
+    while true:
+        for racer in turtles:
+            distance = random.randrange(1-20)
+            racer.forward(distance)
 
 
 def create_turtles(colors):
