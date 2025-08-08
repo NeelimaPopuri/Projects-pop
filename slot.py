@@ -42,7 +42,7 @@ def get_bet():
             if MIN_BET <= amount <= MAX_BET:
                 break
             else:
-                print(f"Please enter the bet between ${"MIN_BET"} - ${"MAX_BET"}")
+                print(f"Amount must be between ${MIN_BET} - ${MAX_BET}")
         else:
             print("Please enter a number.")
     return amount
@@ -51,10 +51,11 @@ def get_bet():
 def main():
     balance = deposit()
     lines = get_number_of_lines()
-    total_bet = lines*bet
     bet = get_bet()
+    total_bet = lines*bet
+
     print(
-        f"You are bettting ${bet} on ${lines}lines. Total bet is equal to ${total_bet}")
+        f"You are bettting ${bet} on {lines}lines. Total bet is equal to ${total_bet}")
 
 
 main()
