@@ -64,4 +64,4 @@ random.shuffle(COLORS)
 colors = COLORS[:racers]
 
 winner = race(colors)
-print("Winner:", winner)
+print(" The Winner is ", winner, "turtle.")
