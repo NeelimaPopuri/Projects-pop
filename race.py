@@ -1,5 +1,4 @@
 import turtle
-import tkinter as TK
 
 
 WIDTH, HEIGHT = 500, 500
@@ -8,7 +7,7 @@ WIDTH, HEIGHT = 500, 500
 def get_number_of_racers():
     racers = 0
     while True:
-        racers = input("Enter the number of racers(2-10)")
+        racers = input("Enter the number of racers?(2-10): ")
         if racers.isdigit():
             racers = int(racers)
         else:
@@ -27,4 +26,4 @@ def init_turtle():
 
 
 racers = get_number_of_racers()
-print(init_turtle)
+init_turtle()
